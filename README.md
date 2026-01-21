@@ -69,4 +69,9 @@ Open the generated .html file in your browser.
 ##Théorie (Questions 4–7)
  Réponses Q4–Q7
 
+# Build
+docker build -t market-analysis-agent .
+
+# Run
+docker run --rm -p 8000:8000 -v "$(pwd)/reports:/app/reports" market-analysis-agent
 

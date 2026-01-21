@@ -39,12 +39,25 @@ pip install -r requirements.txt
 bash
 python main.py --query "wireless headphones"
 
-uvicorn app:app --reload
+## 3) Run — API
 
+uvicorn app:app --host 0.0.0.0 --port 8000 --reload
+Swagger UI :
+http://127.0.0.1:8000/docs
+
+## 4) Example API usage
 curl -X POST "http://127.0.0.1:8000/analyze" \
   -H "Content-Type: application/json" \
-  -d '{"query":"wireless headphones"}'
+  -d "{\"query\":\"wireless headphones\"}"
+## Notes / Limitations
+Le scraping peut être bloqué selon les sites (robots, limitations). Le projet inclut un mock fallback pour garantir une démo stable.
+Le sentiment est simulé/heuristique (basé sur ratings) pour privilégier l’orchestration et la robustesse.
 
+## Next improvements
+Vrai pipeline NLP sur reviews (aspect-based sentiment)
+Cache (SQLite/Redis) + async scraping
+Observabilité (logs structurés, traces)
+CI (GitHub Actions) : lint + tests
 ## OutputsTest
 pytest -q
 

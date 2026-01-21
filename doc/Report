@@ -1,0 +1,329 @@
+doc<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Market Analysis Report - iphone 15</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0; padding: 0;
+      color: #333;
+      background-color: #f4f4f9;
+    }
+    .container {
+      max-width: 980px;
+      margin: 0 auto;
+      background: white;
+      padding: 40px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.08);
+    }
+    h1, h2, h3 { color: #2c3e50; }
+    .muted { color: #7f8c8d; }
+    .cover-page {
+      text-align: center;
+      padding: 90px 0;
+      page-break-after: always;
+      min-height: 70vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 8px;
+    }
+    .cover-title {
+      font-size: 3em;
+      margin-bottom: 10px;
+      color: #2980b9;
+      font-weight: 800;
+    }
+    .cover-subtitle {
+      font-size: 1.4em;
+      color: #7f8c8d;
+      margin-bottom: 28px;
+    }
+    .section {
+      margin-bottom: 50px;
+      padding-bottom: 26px;
+      border-bottom: 1px solid #eee;
+    }
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 18px;
+      margin-top: 16px;
+    }
+    .kpi-card {
+      background: #f8f9fa;
+      padding: 18px;
+      border-radius: 10px;
+      text-align: center;
+      border-left: 5px solid #2980b9;
+    }
+    .kpi-value {
+      font-size: 2em;
+      font-weight: bold;
+      color: #2c3e50;
+      margin-bottom: 4px;
+    }
+    .kpi-label {
+      font-size: 0.85em;
+      color: #7f8c8d;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .chart-container {
+      position: relative;
+      height: 320px;
+      width: 100%;
+      margin-top: 18px;
+    }
+    .recommendation-box {
+      background-color: #e8f6f3;
+      border: 1px solid #a2d9ce;
+      padding: 18px;
+      border-radius: 10px;
+      margin-top: 14px;
+    }
+    .recommendation-title {
+      color: #16a085;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 18px;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 12px;
+      text-align: left;
+    }
+    th {
+      background-color: #2980b9;
+      color: white;
+    }
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+    .executive-summary ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 16px 0 0 0;
+    }
+    .executive-summary li {
+      background: #fff3cd;
+      margin: 10px 0;
+      padding: 14px;
+      border-left: 5px solid #f1c40f;
+      font-weight: 600;
+    }
+    .footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 0.85em;
+      color: #aaa;
+    }
+    .ai-insight-box {
+      background-color: #f0f7ff;
+      padding: 18px;
+      border-left: 5px solid #0056b3;
+      border-radius: 8px;
+      margin: 18px 0 10px 0;
+    }
+    .ai-badge {
+      background: #0056b3;
+      color: white;
+      padding: 4px 8px;
+      border-radius: 6px;
+      font-size: 0.8em;
+      vertical-align: middle;
+      margin-left: 8px;
+    }
+    .pill {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.85em;
+      font-weight: 700;
+      background: #eef2ff;
+      color: #3730a3;
+    }
+    .pill-ok { background:#e8f6f3; color:#0f766e; }
+    .pill-warn { background:#fff3cd; color:#92400e; }
+    .pill-bad { background:#fde2e2; color:#991b1b; }
+    pre {
+      background: #f6f8fa;
+      padding: 12px;
+      border-radius: 10px;
+      overflow: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="cover-page">
+      <div class="cover-title">Market Analysis Report</div>
+      <div class="cover-subtitle">Strategic Insights for: <strong>iphone 15</strong></div>
+      <p><strong>Date:</strong> 2026-01-21</p>
+      <p><strong>Prepared by:</strong> AI Market Agent (Moov AI Edition)</p>
+      <p><strong>Mode:</strong> Deterministic fallback</p>
+    </div>
+
+    <div class="section executive-summary">
+      <h2>Executive Summary</h2>
+      <p class="muted">High-level insights based on the available dataset.</p>
+      <ul>
+        <li>Market Status: <strong>Rising sharply 📈</strong> with a 9.18% change over the last 30 days.</li>
+        <li>Price Point: Average market price is <strong>$978.17</strong>.</li>
+        <li>Customer Sentiment: Overall is <strong>Positive</strong> (avg 0.54).</li>
+        <li>Top Recommendation: <strong>iPhone 14 - 128GB - Unlocked (eBay)</strong> at <strong>$754.00</strong> (eBay).</li>
+      </ul>
+      <div style="margin-top:14px;">
+        For the query <strong>iphone 15</strong>, overall sentiment is <strong>Positive</strong> with an average score of <strong>0.54</strong>. Review distribution: positive=17, neutral=1, negative=0. Observed prices (sample) range from <strong>$807.0</strong> to <strong>$1180.0</strong>, with an average of <strong>$1023.0</strong>.
+      </div>
+    </div>
+
+    <div class="ai-insight-box">
+          <h3 style="margin-top:0;">AI Strategic Analysis <span class="ai-badge">Automated Insight</span></h3>
+          <p><strong>Query:</strong> iphone 15</p>
+          <p><strong>Pricing:</strong> Positioned in a <strong>Premium</strong> segment.</p>
+          <p><strong>Sentiment:</strong> Positive (avg=0.54). Customers are strongly positive overall.</p>
+          <p class="muted"></p>
+        </div>
+
+    <div class="section">
+      <h2>Market Overview</h2>
+      <p class="muted">Key Performance Indicators extracted from scraped data.</p>
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-value">6</div>
+          <div class="kpi-label">Products Analyzed</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-value">$978.17</div>
+          <div class="kpi-label">Average Price</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-value">$983.00</div>
+          <div class="kpi-label">Median Price</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-value">176.12</div>
+          <div class="kpi-label">Price Volatility (Std Dev)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Pricing Analysis</h2>
+      <p class="muted">Price distribution and positioning.</p>
+      <div class="chart-container">
+        <canvas id="priceChart"></canvas>
+      </div>
+      <p><em>Correlation Insight:</em> Negative link: Expensive items aren't necessarily better.</p>
+    </div>
+
+    <div class="section">
+      <h2>Customer Voice & Sentiment</h2>
+      <p class="muted">Natural Language Processing summary of review sentiment.</p>
+
+      <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:10px;">
+        <span class="pill pill-ok">Positive: 17</span>
+        <span class="pill pill-warn">Neutral: 1</span>
+        <span class="pill pill-bad">Negative: 0</span>
+      </div>
+
+      <div class="chart-container">
+        <canvas id="sentimentChart"></canvas>
+      </div>
+
+      <h3>Key Feedback Themes</h3>
+      <ul>
+        <li>Recurring theme: <strong>battery</strong></li><li>Recurring theme: <strong>value</strong></li><li>Recurring theme: <strong>shipping</strong></li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Recommendations & Action Plan</h2>
+      <div class="recommendation-box">
+        <div class="recommendation-title">Strategic Recommendation</div>
+        <p>Based on the <strong>Rising sharply 📈</strong> trend and <strong>Positive</strong> sentiment:</p>
+        <p><strong>Action:</strong> Target the price range around <strong>$983.00</strong> to <strong>$978.17</strong>.</p>
+        <p><strong>Opportunity:</strong> Compare sellers (e.g., eBay) where deals like <em>iPhone 14 - 128GB - Unlocked (eBay)</em> perform well.</p>
+      </div>
+
+      <ol>
+        <li>Prioritize listings with strong ratings and consistent positive feedback; verify return policy and warranty.</li><li>Compare prices across sellers and target the median/average range unless a premium is justified (condition, storage, accessories).</li><li>Watch for recurring issues mentioned in reviews (e.g., battery, shipping) and filter sellers accordingly.</li><li>Focus your checks on recurring themes: battery, value, shipping.</li>
+      </ol>
+    </div>
+
+    <div class="section">
+      <h2>Top Products (sample)</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Title</th><th>Price</th><th>Rating</th><th>Source</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>iPhone 15 - 128GB - Unlocked (Amazon)</td><td>$1,005.00</td><td>4.2</td><td>Amazon</td></tr><tr><td>iPhone 15 Pro - 128GB - Unlocked (Amazon)</td><td>$1,180.00</td><td>4.0</td><td>Amazon</td></tr><tr><td>iPhone 14 - 128GB - Unlocked (Amazon)</td><td>$807.00</td><td>4.2</td><td>Amazon</td></tr><tr><td>iPhone 15 - 128GB - Unlocked (eBay)</td><td>$961.00</td><td>4.5</td><td>eBay</td></tr><tr><td>iPhone 15 Pro - 128GB - Unlocked (eBay)</td><td>$1,162.00</td><td>4.4</td><td>eBay</td></tr><tr><td>iPhone 14 - 128GB - Unlocked (eBay)</td><td>$754.00</td><td>4.6</td><td>eBay</td></tr>
+        </tbody>
+      </table>
+      <p class="muted" style="margin-top:10px;">Showing up to 6 items from the analysis payload.</p>
+    </div>
+
+    <div class="section">
+      <h2>Appendix: Methodology</h2>
+      <table>
+        <tr><th>Component</th><th>Technology</th></tr>
+        <tr><td>Data Collection</td><td>Python Requests + BeautifulSoup (Resilient Scraping / Fallback)</td></tr>
+        <tr><td>Market Math</td><td>Pandas (Descriptive Stats + Time Series Interpolation)</td></tr>
+        <tr><td>NLP Engine</td><td>TextBlob / Lexicon (Polarity Analysis)</td></tr>
+        <tr><td>Report Engine</td><td>Dynamic HTML + Chart.js + Deterministic NLG</td></tr>
+      </table>
+    </div>
+
+
+    <div class="footer">Generated by AI Market Agent • 2026-01-21</div>
+
+    <script>
+      // Chart 1: Price Distribution (min/avg/max)
+      const ctxPrice = document.getElementById('priceChart').getContext('2d');
+      new Chart(ctxPrice, {
+        type: 'bar',
+        data: {
+          labels: ['Min Price', 'Average Price', 'Max Price'],
+          datasets: [{
+            label: 'Price Points (USD)',
+            data: [754.0, 978.17, 1180.0],
+            backgroundColor: ['#3498db', '#2ecc71', '#e74c3c']
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false
+        }
+      });
+
+      // Chart 2: Sentiment Donut
+      const ctxSent = document.getElementById('sentimentChart').getContext('2d');
+      new Chart(ctxSent, {
+        type: 'doughnut',
+        data: {
+          labels: ['Positive', 'Neutral', 'Negative'],
+          datasets: [{
+            data: [17, 1, 0],
+            backgroundColor: ['#2ecc71', '#95a5a6', '#e74c3c']
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false
+        }
+      });
+    </script>
+  </div>
+</body>
+</html>

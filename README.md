@@ -34,3 +34,26 @@ python -m venv .venv
 # Windows PowerShell:
 .\.venv\Scripts\activate
 pip install -r requirements.txt
+
+## Run — CLI
+```bash
+python main.py --query "wireless headphones"
+
+uvicorn app:app --reload
+
+curl -X POST "http://127.0.0.1:8000/analyze" \
+  -H "Content-Type: application/json" \
+  -d '{"query":"wireless headphones"}'
+
+## OutputsTest
+pytest -q
+
+
+## Outputs
+HTML reports are generated in: reports/
+Open the generated .html file in your browser.
+
+##Théorie (Questions 4–7)
+📄 Réponses Q4–Q7
+
+### Les 3 choses à vérifier pour que ce soit “OK rendu”1) **Le PDF existe vraiment** dans ton repo : `docs/reponses_Q4-Q7.pdf` (sinon adapte le nom).  2) Ton endpoint est bien **`POST /analyze`** (sinon remplace dans le `curl`).  3) Le CLI accepte bien `--query` (sinon remplace par tes vrais arguments).Si tu veux, envoie-moi :- une capture ou le texte de la page `http://127.0.0.1:8000/docs` (liste des routes),- et le `python main.py --help`,et je te renvoie un README final **exact** (commandes et endpoints 100% corrects).

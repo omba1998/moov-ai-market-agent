@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual env
+.venv/
+venv/
+
+# Test cache
+.pytest_cache/
+
+# OS / IDE
+.vscode/
+.DS_Store
+
+# Generated outputs (à garder hors git si ce sont des rapports générés)
+reports/

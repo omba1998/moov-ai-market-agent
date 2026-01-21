@@ -37,7 +37,7 @@ pip install -r requirements.txt
 
 ## 2) Run — CLI
 bash
-python main.py --query "wireless headphones"
+python main.py --query "iphone 15"
 
 ## 3) Run — API
 
@@ -48,7 +48,7 @@ http://127.0.0.1:8000/docs
 ## 4) Example API usage
 curl -X POST "http://127.0.0.1:8000/analyze" \
   -H "Content-Type: application/json" \
-  -d "{\"query\":\"wireless headphones\"}"
+  -d "{\"query\":\"iphone 15\"}"
 ## Notes / Limitations
 Le scraping peut être bloqué selon les sites (robots, limitations). Le projet inclut un mock fallback pour garantir une démo stable.
 Le sentiment est simulé/heuristique (basé sur ratings) pour privilégier l’orchestration et la robustesse.
